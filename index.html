@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://kit.fontawesome.com/97238f579d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js')</script>
+
+</head>
+
+<body class="bg-gray-50 overflow-x-hidden">
+    <div class="bg-white lg:bg-[#4761ff] w-full" id="nav">
+        <div class="py-3 flex flex-row text-white justify-between lg:justify-around items-center">
+            <div>
+                <h1 class="text-3xl font-bold mx-5 my-1 lg:mx-0 text-black lg:text-white">GrowMark</h1>
+
+            </div>
+            <div class="my-1" id="navbar">
+                <div class=" mx-5 lg:hidden" onclick="toggleNavbar()">
+                    <div class="line-1 block h-0.5 w-6 m-1.5 bg-black"></div>
+                    <div class="line-2 block h-0.5 w-6 m-1.5 bg-black"></div>
+                    <div class="line-3 block h-0.5 w-6 m-1.5 bg-black"></div>
+                </div>
+                <ul class="flex-row gap-5 justify-center items-center lg:flex hidden font-light">
+                    <li><i class="fa-solid fa-location-dot pr-2" aria-hidden="true"></i>123Street, New York, USA</li>
+                    <li><i class="fa-solid fa-envelope pr-2" aria-hidden="true"></i>info@example.com</li>
+                    <li><i class="fa-solid fa-phone pr-2" aria-hidden="true"></i>+088 453 54785</li>
+                    <li class="bg-white text-[#4761ff] w-8 h-8 flex justify-center items-center rounded-full"><i
+                            class="fa-brands fa-facebook-f fa-md "></i></li>
+                    <li class="bg-white text-[#4761ff] w-8 h-8 flex justify-center items-center rounded-full"><i
+                            class="fa-brands fa-twitter fa-md "></i></li>
+                    <li class="bg-white text-[#4761ff] w-8 h-8 flex justify-center items-center rounded-full"><i
+                            class="fa-brands fa-linkedin-in fa-md "></i></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="w-full border " id="collapsed-nav" style="display: none;">
+            <ul class="p-5 text-lg gap-2 flex flex-col">
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Projects</li>
+                <li onclick="dropdownCollapsed()"><button>Pages <i class="fa-solid fa-angle-down align-middle "
+                            aria-hidden="true"></i></button>
+                    <div class="py-3 text-black bg-slate-100" id="pages-dropdown" style="display: none;">
+                        <ul class="gap-2 p-1 flex flex-col">
+                            <li>Features</li>
+                            <li>Our Team</li>
+                            <li>Testimonials</li>
+                            <li>Quotation</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+    <div class=" shadow-2xl bg-white w-full hidden lg:block " id="large-nav">
+        <div class="flex justify-around ">
+            <ul class="flex gap-12 items-center text-lg">
+                <li class="text-[#4761ff]">Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Projects</li>
+                <li class="cursor-pointer relative py-3"  onmouseover="dropDD()"
+                        onmouseleave="closeDD()"><a>Pages</a> <i
+                            class="fa-solid fa-angle-down align-middle"></i>
+                        <ul class="bg-purple-50 px-3 border flex-col lg:absolute z-[10000] lg:top-[100%]  py-2 lg:px-6 font-light rounded-b-lg lg:bg-white "
+                            id="drop-item" style="z-index: 1000000 !important; display: none;">
+                            <li><a href="">Features</a></li>
+                            <li><a href="">Our Team</a></li>
+                            <li><a href="">Testimonial</a></li>
+                            <li><a href="">Quotation</a></li>
+                            <li><a href="">404 Page</a></li>
+                        </ul>
+                    </li>
+
+                <li>Contact</li>
+            </ul>
+            <div class="py-3">
+                <button class="rounded-full text-lg bg-[#4761ff] p-2 px-3 text-white ">Get A Quote</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="swiper-container h-[450px] md:h-full w-full relative overflow-hidden">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide h-[450px] md:h-full w-full justify-center">
+                <img src="./img/carousel-1.jpg" class="w-full h-full object-cover md:object-fill" />
+                <div
+                    class="absolute top-[15%] left-[5%] lg:left-[10%] text-white w-3/4 md:w-1/2 xl:top-[35%] slide-left">
+                    <h3 class="text-xl font-light sm:text-xl md:text-3xl ">Welcome to <span
+                            class="font-medium text-2xl sm:text-4xl md:text-5xl">GrowMark</span></h3>
+                    <h1 class="text-4xl font-bold sm:text-2xl md:text-4xl lg:text-7xl">Unlock Your Business Growth</h1>
+                    <button class="bg-[#4761ff] px-6 py-3 my-10 rounded-3xl text-lg ">Explore More</button>
+                </div>
+            </div>
+
+            <div class="swiper-slide h-[450px] md:h-full w-full justify-center">
+                <img src="./img/carousel-2.jpg" class="w-full h-full object-cover md:object-fill" />
+                <div
+                    class="absolute top-[15%] right-[5%] lg:right-[10%] text-white w-3/4 md:w-1/2 xl:top-[35%] text-end slide-right">
+                    <h3 class="text-xl font-light sm:text-xl md:text-3xl">Welcome to <span
+                            class="font-medium text-2xl sm:text-4xl md:text-5xl">GrowMark</span></h3>
+                    <h1 class="text-4xl font-bold sm:text-2xl md:text-4xl lg:text-7xl">Ready To Grow Your Business</h1>
+                    <button class="bg-[#4761ff] px-6 py-3 my-10 rounded-3xl text-lg">Explore More</button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="swiper-custom-prev fa-solid fa-chevron-left absolute left-5 top-1/2 transform -translate-y-1/2 px-5 py-4 rounded-full shadow-md bg-blue-500 opacity-60 z-10 text-white">
+        </div>
+        <div
+            class="swiper-custom-next fa-solid fa-chevron-right absolute right-5 top-1/2 transform -translate-y-1/2 px-5 py-4 rounded-full shadow-md bg-blue-500 opacity-60 z-10 text-white">
+        </div>
+    </div>
+
+
+
+    <div class="flex flex-wrap justify-center lg:mt-24 md:mt-20 mt-16 sm:gap-0 md:gap-0 lg:gap-0  max-[640px]:mx-5 sm:mx-5 md:mx-auto lg:w-[70%] lg:mx-auto delay-[100ms] duration-[900ms] taos:translate-x-[-100px] taos:opacity-0"
+        data-taos-offset="100">
+        <div
+            class="w-full sm:w-[48%] md:w-[40%] p-3 lg:w-[25%] bg-white border-r-gray-200 shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)]">
+            <div class="p-5">
+                <img class="my-4" src="./img/icon/icon-1.png" alt="">
+                <p class="text-xl font-medium my-3">Award Winning</p>
+                <p class="font-light my-3">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam</p>
+            </div>
+        </div>
+        <div class="w-full sm:w-[48%] md:w-[40%] p-3 lg:w-[25%] bg-white shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)]">
+            <div class="p-5">
+                <img class="my-4" src="./img/icon/icon-2.png" alt="">
+                <p class="text-xl font-medium my-3">Professional Staff</p>
+                <p class="font-light my-3">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam</p>
+            </div>
+        </div>
+        <div class="w-full sm:w-[48%] md:w-[40%] p-3 lg:w-[25%] bg-white shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)]">
+            <div class="p-5">
+                <img class="my-4" src="./img/icon/icon-3.png" alt="">
+                <p class="text-xl font-medium my-3">Fair pricing</p>
+                <p class="font-light my-3">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam</p>
+            </div>
+        </div>
+        <div class="w-full sm:w-[48%] md:w-[40%] p-3 lg:w-[25%] bg-white shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)]">
+            <div class="p-5">
+                <img class="my-4" src="./img/icon/icon-4.png" alt="">
+                <p class="text-xl font-medium my-3">24/7 Support</p>
+                <p class="font-light my-3">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="flex justify-center mt-20">
+        <div class="flex flex-col lg:flex-row w-full  max-w-[80.5rem] items-center lg:justify-between justify-center bg-cover "
+            style="background-image: url('./img/about.jpg');">
+            <button class="mx-auto my-12 flex justify-center" onclick="displayModel()">
+                <div class="relative max-h-20">
+                    <div class="h-20 w-20 animated-circle z-0 bg-blue-500 absolute mx-auto"></div>
+                    <img class="max-h-20 mx-auto z-10" src="/img/play.png" alt="" style="opacity: 1 !important;">
+                </div>
+            </button>
+
+            <div id="model"
+                class=" w-screen h-screen rounded-lg fixed top-0 left-0 z-[2000] hidden justify-center items-center backdrop-blur-sm">
+                <div class="m-auto mx-2 w-[800px]">
+                    <div
+                        class="close text-xl bg-white flex justify-end px-2 shadow-[0px_0px_10px_1px_rgba(0,0,0,0.5)] rounded-t-lg max-w-[800px]">
+                        <button onclick="displayModel()" class="close-icon text-red-500 hover:text-red-600"><i
+                                class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="w-[100%]">
+                        <iframe id="videoId"
+                            class="w-full h-[300px] sm:h-[500px] max-w-[800px] max-h-[450px] rounded-b-lg"
+                            src="https://www.youtube.com/embed/ft30zcMlFao" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white mx-8 rounded-t-xl max-w-2xl p-7 lg:mt-10 delay-[150ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0"
+                data-taos-offset="100">
+                <h3 class="text-xl sm:text-2xl text-blue-600 my-5">About Us</h3>
+                <h1 class="text-3xl sm:text-4xl font-bold my-3">The Best Marketing Agency to Improve Your Business</h1>
+                <p class="font-light text-gray-600 my-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
+                    Aliqu diam amet
+                    diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo
+                </p>
+                <div class=" flex flex-col sm:flex-row ">
+                    <div class="">
+                        <img src="./img/icon/icon-5.png" alt="">
+                        <h1 class="text-xl font-medium my-3">Managed Services</h1>
+                        <p class="font-light text-gray-600 my-3">Clita erat ipsum et lorem et sit sed stet lorem</p>
+                    </div>
+                    <div class="">
+                        <img src="./img/icon/icon-5.png" alt="">
+                        <h1 class="text-xl font-medium my-3">Dedicated Experts</h1>
+                        <p class="font-light text-gray-600 my-3">Clita erat ipsum et lorem et sit sed stet lorem</p>
+                    </div>
+                </div>
+                <button class="bg-[#4761ff] px-6 py-3 my-10 rounded-3xl text-lg text-white">Explore More</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="lg:mt-20 md:mt-8 mt-10 container w-full max-w-6xl mx-auto px-5 overflow-hidden ">
+        <div class="w-5/6 lg:w-4/6 text-center mx-auto delay-[100ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0"
+            data-taos-offset="50">
+            <p class="text-[#4761ff] text-2xl sm:text-2xl md:text-2xl my-2 lg:my-2 text-center">Our Services</p>
+            <p class="text-4xl lg:text-5xl text-center my-1 md:my-3 lg:my-1 font-bold">Digital Marketing <br> Services
+                that We Offer</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 my-12 md:p-5 mx-auto  overflow-y-hidden">
+            <div class="bg-white flex flex-col shadow-[0px_0px_20px_0px_rgba(0,0,0,0.1)] rounded-md justify-center items-center p-8 py-12 lg:py-20 delay-[150ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 relative hover:-translate-y-5 group"
+                data-taos-offset="50">
+                <img src="./img/icon/icon-5.png" alt="" class="h-16 w-16">
+                <p class="font-medium my-5 text-lg">Digital Marketing</p>
+                <p class="font-light text-center text-gray-600">Erat ipsum justo amet duo et elitr dolor, est duo duo
+                    eos lorem sed diam.</p>
+                <div
+                    class="text-blue-600 absolute bottom-[-1.25rem] p-1 z-[1000] justify-center rounded-b-md text-center w-full bg-[#eeeeee] m-auto opacity-0 -translate-y-2 transition-all duration-300 delay-75 group-hover:opacity-100 group-hover:translate-y-0">
+                    <a href="" class="">Read More<i class="fa-solid fa-angles-right"></i></a>
+                </div>
+            </div>
+
+
+
+            <div class="bg-white flex flex-col shadow-[0px_0px_40px_0px_rgba(0,0,0,0.1)] rounded-md justify-center items-center p-8 py-12 lg:py-20 delay-[150ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 realtive hover:-translate-y-5 group"
+                data-taos-offset="50">
+                <img src="./img/icon/icon-6.png" alt="" class="h-16 w-16 ">
+                <p class="font-medium my-5 text-lg">Internet Marketing</p>
+                <p class="font-light text-center text-gray-600">Erat ipsum justo amet duo et elitr dolor, est duo duo
+                    eos lorem sed diam.</p>
+                <div
+                    class="text-blue-600 absolute bottom-[-1.25rem] p-1 z-[1000] justify-center rounded-b-md text-center w-full bg-[#eeeeee] m-auto opacity-0 -translate-y-2 transition-all duration-300 delay-75 group-hover:opacity-100 group-hover:translate-y-0">
+                    <a href="" class="">Read More<i class="fa-solid fa-angles-right"></i></a>
+                </div>
+            </div>
+            <div class="bg-white flex flex-col shadow-[0px_0px_40px_0px_rgba(0,0,0,0.1)] rounded-md justify-center items-center p-8 py-12 lg:py-20 delay-[150ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 realtive hover:-translate-y-5 group"
+                data-taos-offset="50">
+                <img src="./img/icon/icon-7.png" alt="" class="h-16 w-16">
+                <p class="font-medium my-5 text-lg">Content Marketing</p>
+                <p class="font-light text-center text-gray-600">Erat ipsum justo amet duo et elitr dolor, est duo duo
+                    eos lorem sed diam.</p>
+                <div
+                    class="text-blue-600 absolute bottom-[-1.25rem] p-1 z-[1000] justify-center rounded-b-md text-center w-full bg-[#eeeeee] m-auto opacity-0 -translate-y-2 transition-all duration-300 delay-75 group-hover:opacity-100 group-hover:translate-y-0">
+                    <a href="" class="">Read More<i class="fa-solid fa-angles-right"></i></a>
+                </div>
+            </div>
+            <div class="bg-white flex flex-col shadow-[0px_0px_40px_0px_rgba(0,0,0,0.1)] rounded-md justify-center items-center p-8 py-12 lg:py-20 delay-[150ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 realtive hover:-translate-y-5 group"
+                data-taos-offset="50">
+                <img src="./img/icon/icon-8.png" alt="" class="h-16 w-16">
+                <p class="font-medium my-5 text-lg">Social Marketing</p>
+                <p class="font-light text-center text-gray-600">Erat ipsum justo amet duo et elitr dolor, est duo duo
+                    eos lorem sed diam.</p>
+                <div
+                    class="text-blue-600 absolute bottom-[-1.25rem] p-1 z-[1000] justify-center rounded-b-md text-center w-full bg-[#eeeeee] m-auto opacity-0 -translate-y-2 transition-all duration-300 delay-75 group-hover:opacity-100 group-hover:translate-y-0">
+                    <a href="" class="">Read More<i class="fa-solid fa-angles-right"></i></a>
+                </div>
+            </div>
+            <div class="bg-white flex flex-col shadow-[0px_0px_40px_0px_rgba(0,0,0,0.1)] rounded-md justify-center items-center p-8 py-12 lg:py-20 delay-[150ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 realtive hover:-translate-y-5 group"
+                data-taos-offset="50">
+                <img src="./img/icon/icon-9.png" alt="" class="h-16 w-16">
+                <p class="font-medium my-5 text-lg">B2B Marketing</p>
+                <p class="font-light text-center text-gray-600">Erat ipsum justo amet duo et elitr dolor, est duo duo
+                    eos lorem sed diam.</p>
+                <div
+                    class="text-blue-600 absolute bottom-[-1.25rem] p-1 z-[1000] justify-center rounded-b-md text-center w-full bg-[#eeeeee] m-auto opacity-0 -translate-y-2 transition-all duration-300 delay-75 group-hover:opacity-100 group-hover:translate-y-0">
+                    <a href="" class="">Read More<i class="fa-solid fa-angles-right"></i></a>
+                </div>
+            </div>
+            <div class="bg-white flex flex-col shadow-[0px_0px_40px_0px_rgba(0,0,0,0.1)] rounded-md justify-center items-center p-8 py-12 lg:py-20 delay-[150ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 realtive hover:-translate-y-5 group"
+                data-taos-offset="50">
+                <img src="./img/icon/icon-10.png" alt="" class="h-16 w-16">
+                <p class="font-medium my-5 text-lg">E-Mail Marketing</p>
+                <p class="font-light text-center text-gray-600">Erat ipsum justo amet duo et elitr dolor, est duo duo
+                    eos lorem sed diam.</p>
+                <div
+                    class="text-blue-600 absolute bottom-[-1.25rem] p-1 z-[1000] justify-center rounded-b-md text-center w-full bg-[#eeeeee] m-auto opacity-0 -translate-y-2 transition-all duration-300 delay-75 group-hover:opacity-100 group-hover:translate-y-0">
+                    <a href="" class="">Read More<i class="fa-solid fa-angles-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="container w-full max-w-7xl mx-auto md:mt-12 lg:mt-24 overflow-hidden">
+        <div
+            class="flex md:flex-row flex-col justify-center items-center md:justify-between overflow-y-hidden overflow-x-hidden">
+            <div class="w-full ml-4 text-center md:text-start md:w-4/6 xl:w-3/6 overflow-y-hidden delay-[50ms] duration-[700ms] taos:translate-y-[150px] taos:opacity-0 "
+                data-taos-offset="20">
+                <p class="text-[#4761ff] text-2xl md:my-3 sm:my-1 lg:my-1">Our Projects</p>
+                <p class="text-4xl md:text-5xl font-bold ">We've Done Lots of Awesome Projects</p>
+            </div>
+            <div class="flex flex-row justify-end mt-8 md:mt-[5rem] items-center gap-5 text-lg delay-[100ms] duration-[700ms] taos:translate-y-[200px] taos:opacity-0 p-4"
+                data-taos-offset="150">
+                <a class=""><i
+                        class="fa-solid button-prev fa-chevron-left px-5 bg-white py-4 rounded-full hover:bg-[#4761ff] shadow-md"></i></a>
+                <a class=""><i
+                        class="fa-solid button-next fa-chevron-right px-5 py-4 bg-white rounded-full hover:bg-[#4761ff] shadow-md"></i></a>
+            </div>
+        </div>
+
+        <div class="slider-container my-12 w-[70%] max-[560px]:w-[90%] md:w-[97%] mx-auto overflow-hidden delay-[150ms] duration-[700ms] taos:translate-y-[150px] taos:opacity-0"
+            data-taos-offset="90">
+            <div class="swiper-wrapper">
+                <div
+                    class="swiper-slide w-[32%] flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-t-xl my-1 group">
+                    <div class="rounded-t-xl relative">
+                        <img src="./img/project-4.jpg" alt="" class="rounded-t-xl">
+                        <div class="absolute h-full w-full z-100 top-0 opacity-50 rounded-t-xl group-hover:bg-black">
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-b-xl">
+                        <p class="text-lg font-medium">Business Target Market 1</p>
+                        <p class="font-light text-gray-600">Clta erat ipsum et lorem et sta ceat ipsum dolor ruab olson
+                            lorem</p>
+                    </div>
+                    <div class="justify-center absolute hidden items-center h-[80%] w-full gap-3 group-hover:flex ">
+                        <i
+                            class="fa-solid fa-eye shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                        <i
+                            class="fa-solid fa-link shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide w-[32%] flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-t-xl my-1 group">
+                    <div class="rounded-t-xl relative">
+                        <img src="./img/project-3.jpg" alt="" class="rounded-t-xl">
+                        <div class="absolute h-full w-full z-100 top-0 opacity-50 rounded-t-xl group-hover:bg-black">
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-b-xl">
+                        <p class="text-lg font-medium">Business Target Market 2</p>
+                        <p class="font-light text-gray-600">Clta erat ipsum et lorem et sta ceat ipsum dolor ruab olson
+                            lorem</p>
+                    </div>
+                    <div class="justify-center absolute hidden items-center h-[80%] w-full gap-3 group-hover:flex ">
+                        <i
+                            class="fa-solid fa-eye shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                        <i
+                            class="fa-solid fa-link shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide w-[32%] flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-t-xl my-1 group">
+                    <div class="rounded-t-xl relative">
+                        <img src="./img/project-1.jpg" alt="" class="rounded-t-xl">
+                        <div class="absolute h-full w-full z-100 top-0 opacity-50 rounded-t-xl group-hover:bg-black">
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-b-xl">
+                        <p class="text-lg font-medium">Business Target Market 3</p>
+                        <p class="font-light text-gray-600">Clta erat ipsum et lorem et sta ceat ipsum dolor ruab olson
+                            lorem</p>
+                    </div>
+                    <div class="justify-center absolute hidden items-center h-[80%] w-full gap-3 group-hover:flex ">
+                        <i
+                            class="fa-solid fa-eye shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                        <i
+                            class="fa-solid fa-link shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide w-[32%] flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-t-xl my-1 group">
+                    <div class="rounded-t-xl relative">
+                        <img src="./img/project-2.jpg" alt="" class="rounded-t-xl">
+                        <div class="absolute h-full w-full z-100 top-0 opacity-50 rounded-t-xl group-hover:bg-black">
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-b-xl">
+                        <p class="text-lg font-medium">Business Target Market 3</p>
+                        <p class="font-light text-gray-600">Clta erat ipsum et lorem et sta ceat ipsum dolor ruab olson
+                            lorem</p>
+                    </div>
+                    <div class="justify-center absolute hidden items-center h-[80%] w-full gap-3 group-hover:flex ">
+                        <i
+                            class="fa-solid fa-eye shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                        <i
+                            class="fa-solid fa-link shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide w-[32%] flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-t-xl my-1 group">
+                    <div class="rounded-t-xl relative">
+                        <img src="./img/project-4.jpg" alt="" class="rounded-t-xl">
+                        <div class="absolute h-full w-full z-100 top-0 opacity-50 rounded-t-xl group-hover:bg-black">
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white rounded-b-xl">
+                        <p class="text-lg font-medium">Business Target Market 3</p>
+                        <p class="font-light text-gray-600">Clta erat ipsum et lorem et sta ceat ipsum dolor ruab olson
+                            lorem</p>
+                    </div>
+                    <div class="justify-center absolute hidden items-center h-[80%] w-full gap-3 group-hover:flex ">
+                        <i
+                            class="fa-solid fa-eye shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                        <i
+                            class="fa-solid fa-link shadow-lg cursor-pointer h-12 w-12 bg-white flex justify-center items-center rounded-full text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto md:w-full max-w-[] mt-10 lg:mt-16 px-10">
+        <div class="flex flex-col lg:flex-row gap-6">
+            <div class="w-full lg:w-6/12 flex flex-col delay-[150ms] duration-[700ms] taos:translate-y-[150px] taos:opacity-0"
+                data-taos-offset="90">
+                <div class="sm:text-center md:text-start">
+                    <p class="text-[#4761ff] text-2xl my-3">Get A Quote</p>
+                    <p class="text-3xl md:text-4xl leading-[3rem] font-bold lg:text-5xl">Need our Expert Help?</p>
+                    <p class="text-3xl md:text-4xl leading-[3.2rem] font-bold">We're Here!</p>
+                </div>
+                <div class="my-5 flex flex-col gap-6 font-light md:text-lg">
+                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita
+                        erat ipsum et lorem et sit, sed stet lorem sit clita duo justo </p>
+                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita
+                        erat ipsum et lorem et sit, sed stet lorem sit clita duo justo </p>
+                    <button
+                        class=" flex items-center justify-between max-[500px]:w-[60%] max-[639px]:w-[40%] w-[40%] sm:w-[40%] md:w-[30%] lg:w-[40%] xl:w-[30%] bg-white ">
+                        <span
+                            class="w-1/4 md:py-3 sm:py-[0.85rem] py-[0.58rem] rounded-s-lg  bg-[#4761ff] border border-[#4761ff] text-white "><i
+                                class="fa-solid fa-phone"></i></span>
+                        <p
+                            class="w-3/4  md:py-3 sm:py-[0.70rem] py-[0.64rem]  text-[#4761ff] rounded-e-lg border border-[#4761ff] font-medium sm:text-lg text-sm">
+                            +012 345 6789</p>
+                    </button>
+                </div>
+            </div>
+            <div class="w-full lg:w-6/12 flex flex-col delay-[150ms] duration-[700ms] taos:translate-y-[150px] taos:opacity-0"
+                data-taos-offset="150">
+                <div>
+                    <p class="font-medium text-3xl lg:mt-3 md:mt-1 mb-4">Get A Free Quote</p>
+                </div>
+                <form action="">
+                    <div class="mt-2 flex flex-col gap-3">
+                        <div class="flex flex-col md:flex-row justify-between gap-3">
+                            <input type="text" placeholder="Your Name"
+                                class="py-4 px-3 w-full md:w-[48%] border border-gray-300 bg-transparent rounded-lg">
+                            <input type="text" placeholder="Your Email"
+                                class="py-4 px-3 w-full md:w-[48%] border border-gray-300 bg-transparent rounded-lg">
+                        </div>
+                        <div class="flex flex-col md:flex-row justify-between gap-3">
+                            <input type="text" placeholder="Your Mobile"
+                                class="py-4 px-3 w-full md:w-[48%] border border-gray-300 bg-transparent rounded-lg">
+                            <select name="choose" id=""
+                                class="py-4 px-3 w-full md:w-[48%] font-light text-gray-600 border border-gray-300 bg-transparent rounded-lg">
+                                <option value="1">Digital Marketing</option>
+                                <option value="2">Social Marketing</option>
+                                <option value="3">Content Marketing</option>
+                                <option value="4">E-mail Marketing</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea name="" id=""
+                                class="h-32 p-3 w-full border border-gray-300 bg-transparent rounded-lg"
+                                placeholder="Message"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="py-4 w-full bg-[#4761ff] text-white rounded-lg"><span>Submit
+                                    Now</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container max-w-7xl p-10 xl:p-0 mx-auto lg:mt-16 md:mt-12">
+        <div class="text-center delay-[10ms] duration-[700ms] taos:translate-y-[150px] taos:opacity-0"
+            data-taos-offset="20">
+            <p class="text-[#4761ff] my-3 text-2xl lg:my-1">Our Team</p>
+            <p class="text-4xl lg:text-5xl my-3 lg:my-1 font-bold">Our Expert People <br> Ready To Help You</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 delay-[50ms] duration-[50ms] taos:translate-y-[150px] taos:opacity-0"
+            data-taos-offset="80">
+            <div class="border flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.07)] rounded-lg delay-[50ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 relative group"
+                data-taos-offset="80">
+                <img src="./img/team-1.jpg" alt="Alex Robin" class="rounded-t-lg">
+                <div class="p-5 text-lg">
+                    <p class="text-lg font-medium text-center">Alex Robin</p>
+                    <p class="text-blue-600 text-center">Founder & CEO</p>
+                </div>
+                <div class="overflow-hidden">
+                    <ul
+                        class="flex-col absolute top-4 left-4 z-100 opacity-0  transition-all duration-500 group-hover:opacity-100 ">
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform  group-hover:translate-x-0 -translate-x-4 duration-300 delay-0">
+                            <i class="fa-brands fa-twitter"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-75">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-150">
+                            <i class="fa-brands fa-youtube"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-200">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="border flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.07)] rounded-lg delay-[70ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 relative group"
+                data-taos-offset="20">
+                <img src="./img/team-2.jpg" alt="Adam Crew" class="rounded-t-lg">
+                <div class="p-5 text-lg">
+                    <p class="text-lg font-medium text-center">Adam Crew</p>
+                    <p class="text-blue-600 text-center">Co Founder</p>
+                </div>
+                <div class="overflow-hidden">
+                    <ul
+                        class="flex-col absolute top-4 left-4 z-100 opacity-0  transition-all duration-500 group-hover:opacity-100 ">
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform  group-hover:translate-x-0 -translate-x-4 duration-300 delay-0">
+                            <i class="fa-brands fa-twitter"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-75">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-150">
+                            <i class="fa-brands fa-youtube"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-200">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.07)] rounded-lg delay-[90ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 relative group"
+                data-taos-offset="20">
+                <img src="./img/team-3.jpg" alt="Boris Johnson" class="rounded-t-lg">
+                <div class="p-5 text-lg">
+                    <p class="text-lg font-medium text-center">Boris Johnson</p>
+                    <p class="text-blue-600 text-center">Executive Manager</p>
+                </div>
+                <div class="overflow-hidden">
+                    <ul
+                        class="flex-col absolute top-4 left-4 z-100 opacity-0  transition-all duration-500 group-hover:opacity-100 ">
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform  group-hover:translate-x-0 -translate-x-4 duration-300 delay-0">
+                            <i class="fa-brands fa-twitter"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-75">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-150">
+                            <i class="fa-brands fa-youtube"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-200">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.07)] rounded-lg delay-[100ms] duration-[600ms] taos:translate-y-[150px] taos:opacity-0 relative group"
+                data-taos-offset="20">
+                <img src="./img/team-4.jpg" alt="Robert Jordan" class="rounded-t-lg">
+                <div class="p-5 text-lg">
+                    <p class="text-lg font-medium text-center">Robert Jordan</p>
+                    <p class="text-blue-600 text-center">Digital Marketer</p>
+                </div>
+                <div class="overflow-hidden">
+                    <ul
+                        class="flex-col absolute top-4 left-4 z-100 opacity-0  transition-all duration-500 group-hover:opacity-100 ">
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform  group-hover:translate-x-0 -translate-x-4 duration-300 delay-0">
+                            <i class="fa-brands fa-twitter"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-75">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-150">
+                            <i class="fa-brands fa-youtube"></i>
+                        </li>
+                        <li
+                            class="h-9 w-9 my-1 bg-white rounded-full text-blue-600 justify-center items-center team-icon flex transition-transform duration-300 group-hover:translate-x-0 -translate-x-4 delay-200">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container w-full max-w-7xl mx-auto mt-16">
+        <div class="flex md:flex-row flex-col justify-center items-center md:justify-between delay-[150ms] duration-[700ms] taos:translate-y-[150px] taos:opacity-0"
+            data-taos-offset="90">
+            <div class="w-full md:mx-7 lg:ml-4 text-center md:text-start md:w-4/6 xl:w-3/6">
+                <p class="text-[#4761ff] text-2xl my-3 ">Testimonial</p>
+                <p class="text-4xl lg:text-5xl font-bold ">What Clients Say About Our Services</p>
+            </div>
+            <div class="flex flex-row justify-end mt-8 md:mt-[5rem] items-center gap-5 text-lg mr-1">
+                <a class=""><i
+                        class="fa-solid testimonial-button-prev fa-chevron-left px-5 bg-white py-4 rounded-full shadow-md hover:bg-[#4761ff]"></i></a>
+                <a class=""><i
+                        class="fa-solid testimonial-button-next fa-chevron-right px-5 bg-white py-4 rounded-full shadow-md hover:bg-[#4761ff]"></i></a>
+            </div>
+        </div>
+
+        <div class="testimonial-slider-container flex justify-center my-12 px-4 overflow-hidden delay-[150ms] duration-[700ms] taos:translate-y-[150px] taos:opacity-0"
+            data-taos-offset="150">
+            <div class="swiper-wrapper">
+                <div
+                    class="swiper-slide swiper-item w-[60%] lg:w-[33%] md:w-[39%] md:min-w-[250px] sm:w-[60%] border flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-xl sm:px-2 md:px-3 py-4 sm:py-5 md:py-5 lg:py-10 justify-center gap-5">
+                    <img src="./img/testimonial-3.jpg" alt="" class="rounded-full h-28 w-28 ms-4 ">
+                    <p class="px-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe officiis tenetur,
+                        odio explicabo error est earum rerum perferendis sapiente aut sed ipsa Laboriosam, sit!</p>
+                    <div class="px-4">
+                        <p class="text-lg font-medium">Client name</p>
+                        <p class="font-light ">Profession</p>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide swiper-item w-[60%] lg:w-[33%] md:w-[39%] md:min-w-[250px] sm:w-[60%] border flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-xl sm:px-2 md:px-3 py-4 sm:py-5 md:py-5 lg:py-10 justify-center gap-5">
+                    <img src="./img/testimonial-3.jpg" alt="" class="rounded-full h-28 w-28 ms-4 ">
+                    <p class="px-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe officiis tenetur,
+                        odio explicabo error est earum rerum perferendis sapiente aut sed ipsa Laboriosam, sit!</p>
+                    <div class="px-4">
+                        <p class="text-lg font-medium">Client name</p>
+                        <p class="font-light ">Profession</p>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide swiper-item w-[60%] lg:w-[33%] md:w-[39%] md:min-w-[250px] sm:w-[60%] border flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-xl sm:px-2 md:px-3 py-4 sm:py-5 md:py-5 lg:py-10 justify-center gap-5">
+                    <img src="./img/testimonial-4.jpg" alt="" class="rounded-full h-28 w-28 ms-4 ">
+                    <p class="px-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe officiis tenetur,
+                        odio explicabo error est earum rerum perferendis sapiente aut sed ipsa Laboriosam, sit!</p>
+                    <div class="px-4">
+                        <p class="text-lg font-medium">Client name</p>
+                        <p class="font-light ">Profession</p>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide swiper-item w-[60%] lg:w-[33%] md:w-[39%] md:min-w-[250px] sm:w-[60%] border flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-xl sm:px-2 md:px-3 py-4 sm:py-5 md:py-5 lg:py-10 justify-center gap-5">
+                    <img src="./img/testimonial-1.jpg" alt="" class="rounded-full h-28 w-28 ms-4 ">
+                    <p class="px-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe officiis tenetur,
+                        odio explicabo error est earum rerum perferendis sapiente aut sed ipsa Laboriosam, sit!</p>
+                    <div class="px-4">
+                        <p class="text-lg font-medium">Client name</p>
+                        <p class="font-light ">Profession</p>
+                    </div>
+                </div>
+                <div
+                    class="swiper-slide swiper-item w-[60%] lg:w-[33%] md:w-[39%] md:min-w-[250px] sm:w-[60%] border flex flex-col shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] rounded-xl sm:px-2 md:px-3 py-4 sm:py-5 md:py-5 lg:py-10 justify-center gap-5">
+                    <img src="./img/testimonial-2.jpg" alt="" class="rounded-full h-28 w-28 ms-4 ">
+                    <p class="px-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe officiis tenetur,
+                        odio explicabo error est earum rerum perferendis sapiente aut sed ipsa Laboriosam, sit!</p>
+                    <div class="px-4">
+                        <p class="text-lg font-medium">Client name</p>
+                        <p class="font-light ">Profession</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="mt-20 px-6 py-12 bg-[#1C2035] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6">
+            <p class="text-xl text-white">Our Office</p>
+            <div class="mt-5 text-[#B0B9AE] flex flex-col gap-1">
+                <p>
+                    <i class="pr-3 fa-solid fa-location-dot md:text-lg"></i> <span>123 Street, New York, USA</span>
+                </p>
+                <p>
+                    <i class="pr-3 fa-solid fa-phone md:text-lg"></i> <span>+012 345 67890</span>
+                </p>
+                <p>
+                    <i class="pr-3 fa-solid fa-envelope md:text-lg"></i> <span>info@example.com</span>
+                </p>
+            </div>
+            <div class="my-8 flex gap-2">
+                <button class="h-8 w-8 bg-white rounded-full text-black flex justify-center items-center">
+                    <i class="fa-brands fa-twitter"></i>
+                </button>
+                <button class="h-8 w-8 bg-white rounded-full text-black flex justify-center items-center">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </button>
+                <button class="h-8 w-8 bg-white rounded-full text-black flex justify-center items-center">
+                    <i class="fa-brands fa-youtube"></i>
+                </button>
+                <button class="h-8 w-8 bg-white rounded-full text-black flex justify-center items-center">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="p-6">
+            <p class="text-xl text-white">Quick Links</p>
+            <ul class="mt-5 text-[#B0B9AE] flex flex-col gap-2 lg:text-lg">
+                <li class="flex items-center gap-2 transition-all cursor-pointer duration-300 hover:text-xl hover:text-white">
+                    <i class="fa-solid fa-chevron-right " aria-hidden="true"></i> About Us
+                </li>
+                <li class="flex items-center gap-2 transition-all cursor-pointer duration-300 hover:text-xl hover:text-white">
+                    <i class="fa-solid fa-chevron-right " aria-hidden="true"></i> Contact Us
+                </li>
+                <li class="flex items-center gap-2 transition-all cursor-pointer duration-300 hover:text-xl hover:text-white">
+                    <i class="fa-solid fa-chevron-right " aria-hidden="true"></i> Our Services
+                </li>
+                <li class="flex items-center gap-2 transition-all cursor-pointer duration-300 hover:text-xl hover:text-white">
+                    <i class="fa-solid fa-chevron-right " aria-hidden="true"></i> Terms & Conditions
+                </li>
+                <li class="flex items-center gap-2 transition-all cursor-pointer duration-300 hover:text-xl hover:text-white">
+                    <i class="fa-solid fa-chevron-right " aria-hidden="true"></i> Support
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="p-6">
+            <p class="text-xl text-white">Business Hours</p>
+            <div class="mt-5 flex flex-col gap-1 lg:text-lg">
+                <p class="text-[#B0B9AE]">Monday-Friday</p>
+                <p class="text-white">09:00 am - 07:00 pm</p>
+                <p class="text-[#B0B9AE]">Saturday</p>
+                <p class="text-white">09:00 am - 07:00 pm</p>
+                <p class="text-[#B0B9AE]">Sunday</p>
+                <p class="text-white">Closed</p>
+            </div>
+        </div>
+
+        <div class="p-6">
+            <p class="text-xl text-white">Newsletter</p>
+            <p class="text-[#B0B9AE] mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            <div class="rounded-lg mt-4 py-1 px-2 w-full flex justify-between border border-white">
+                <input type="email" placeholder="Your Email" class="bg-transparent w-3/5 text-white outline-none">
+                <button class="py-2 px-3 bg-white rounded-xl text-black">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="p-4 lg:py-5 bg-[#111111]">
+        <div class="text-white flex justify-around items-center flex-wrap text-center gap-2 sm:gap-5">
+            <p>© Your Site Name , <span class="text-[#B0B9AE]">All Rights Reserved.</span></p>
+            <p><span class="text-[#B0B9AE]">Designed By</span> HTML Codex <span class="text-[#B0B9AE]">Distributed By
+                </span>ThemeWagon</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
+
+</body>
+
+</html>collap
